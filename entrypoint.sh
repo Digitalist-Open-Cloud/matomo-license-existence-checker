@@ -3,14 +3,14 @@
 echo "##############################################"
 echo "🤖 - Checking for LICENSE file existence..."
 
-# Define possible license file patterns
-possible_files=("LICENSE" "license" "LICENSE.md" "license.md" "LICENSE.txt" "license.txt")
+# Define possible license file patterns as a space-separated string
+possible_files="LICENSE license LICENSE.md license.md LICENSE.txt license.txt"
 
 # Variable to track if a valid license file is found
 file_found=0
 
 # Loop through possible file names
-for file in "${possible_files[@]}"; do
+for file in $possible_files; do
     if [ -f "$file" ]; then
         echo "✔️ - Found license file: $file"
         file_found=1
@@ -19,7 +19,7 @@ for file in "${possible_files[@]}"; do
 done
 
 # Check if any license file was found
-if [ "$file_found" -eq 1 ]; then
+if [ $file_found -eq 1 ]; then
     echo "✔️ - LICENSE File Exists."
 else
     echo "❌ - LICENSE file DOES NOT exist."
