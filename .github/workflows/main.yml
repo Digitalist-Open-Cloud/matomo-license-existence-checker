@@ -1,11 +1,11 @@
-name: "LICENSE Existence Checker 📝"
+name: "Matomo license existence checker"
 
 on: [push, pull_request]
 
 jobs:
   existence:
-    name: LICENSE Existence Checker
+    name: Matomo license existence checker
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - uses: ./
