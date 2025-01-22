@@ -16,16 +16,17 @@ This is particularly useful in large organisations, with many repositories which
 
 To use this Action first call the [checkout](https://github.com/actions/checkout) action. For example:
 
-```
+```yaml
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+  push:
+    branches: ["main"]
 jobs:
   existence:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: LICENSE Existence Checker
-        uses: Gary-H9/license-existence-checker@v1.0.0
+      - uses: actions/checkout@v4
+      - name: Matomo license existence checker
+        uses: Digitalist-Open-Cloud/matomo-license-existence-checker@main
 ```
-
-## Future Features ✨
-In the event of a failure the Action will create a Pull Request or Issue on the repository it is ran on, requesting that the LICENSE file be created.
