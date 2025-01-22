@@ -2,7 +2,7 @@
 FROM alpine:latest
 # Create and prepare the /repo directory
 RUN mkdir /repo
-COPY . /repo # Copies your local code files from the repository to /repo in the container
+COPY . /repo
 # Add entrypoint script and ensure it's executable
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
