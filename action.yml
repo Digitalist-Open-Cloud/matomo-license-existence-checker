@@ -1,5 +1,5 @@
-name: "LICENSE Existence Checker"
-description: Checks for LICENSE file existence
+name: "Matomo license existence checker"
+description: Checks for LICENSE file existence and license key in plugin.json
 author: Gary-H9
 branding:
   icon: 'file-text'
